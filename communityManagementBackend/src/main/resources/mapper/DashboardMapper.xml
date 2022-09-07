@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zqg.communityManagementBackend.mapper.DashboardMapper">
+    <resultMap id="PieMap" type="com.zqg.communityManagementBackend.entity.Pie">
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="sum" jdbcType="INTEGER" property="value"/>
+    </resultMap>
+
+    <select id="countApply"  resultType="Integer">
+        select count(*)
+        from all_apply
+    </select>
+    <select id="countPerson"  resultType="Integer">
+        select count(*)
+        from all_apply
+        where
+        status ='录取'
+    </select>
+
+    <select id="countArtComment"  resultType="Integer">
+        select count(*)
+        from comment
+    </select>
+    <select id="countDusComment"  resultType="Integer">
+        select count(*)
+        from article_comment
+    </select>
+    <select id="countArtView"  resultType="Integer">
+        select sum(view_d)
+        from app_dus
+    </select>
+    <select id="countDusView"  resultType="Integer">
+        select sum(view)
+        from article
+    </select>
+
+    <select id="countGrade1"  resultType="Integer">
+        select count(*)
+        from user
+        where grade = '大一'
+    </select>
+    <select id="countGrade2"  resultType="Integer">
+        select count(*)
+        from user
+        where grade = '大二'
+    </select>
+    <select id="countGrade3"  resultType="Integer">
+        select count(*)
+        from user
+        where grade = '大三'
+    </select>
+    <select id="countGrade4"  resultType="Integer">
+        select count(*)
+        from user
+        where grade = '大四'
+    </select>
+    <select id="countPie"  resultMap="PieMap">
+        select name,sum
+        from association
+    </select>
+</mapper>

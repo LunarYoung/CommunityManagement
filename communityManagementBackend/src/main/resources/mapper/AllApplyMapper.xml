@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zqg.communityManagementBackend.mapper.AllApplyMapper">
+
+    <insert id="insertFeedback">
+        insert into feedback(content)
+        values(#{content})
+    </insert>
+
+    <select id="getAllApplyList" parameterType="com.zqg.communityManagementBackend.dto.Page" resultType="com.zqg.communityManagementBackend.entity.AllApply">
+        select * from all_apply limit #{startPage},#{pageSize}
+    </select>
+
+    <select id="getForMember" parameterType="Integer" resultType="com.zqg.communityManagementBackend.entity.AllApply">
+        select * from all_apply where  id=#{id}
+    </select>
+
+    <select id="getHistoryAllApplyList" parameterType="com.zqg.communityManagementBackend.dto.Page" resultType="com.zqg.communityManagementBackend.entity.AllApply">
+        select * from all_apply where status="录取" or status="淘汰" limit #{startPage},#{pageSize}
+    </select>
+
+    <select id="queryMember" parameterType="com.zqg.communityManagementBackend.dto.request.QueryApplyReq"  resultType="com.zqg.communityManagementBackend.entity.AllApply">
+        select
+        *
+        from
+        all_apply
+        <where>
+
+            <if test="ass != '' and ass != null">
+                and apply_association =#{ass}
+            </if>
+            <if test="sex != '' and sex != null">
+                and sex =#{sex}
+            </if>
+
+            <if test="name!= '' and name!= null">
+                and name like '%${name}%'
+            </if>
+        </where>
+
+        <choose>
+            <when test="sort == 1">
+                order by id desc
+            </when>
+            <otherwise>
+                order by id asc
+            </otherwise>
+        </choose>
+    </select>
+
+
+    <select id="queryHistoryMember" parameterType="com.zqg.communityManagementBackend.dto.request.QueryApplyReq"  resultType="com.zqg.communityManagementBackend.entity.AllApply">
+        select
+        *
+        from
+        all_apply
+        <where>
+            status="录取" or status="淘汰"
+            <if test="ass != '' and ass != null">
+                and apply_association =#{ass}
+            </if>
+            <if test="sex != '' and sex != null">
+                and sex =#{sex}
+            </if>
+
+            <if test="name!= '' and name!= null">
+                and name like '%${name}%'
+            </if>
+        </where>
+
+        <choose>
+            <when test="sort == 1">
+                order by id desc
+            </when>
+            <otherwise>
+                order by id asc
+            </otherwise>
+        </choose>
+    </select>
+
+    <update id="ApplyUpdateStatus" parameterType="com.zqg.communityManagementBackend.dto.request.ApplyUpdateStatus">
+        update all_apply
+        <set>
+            <if test="status != null">
+                status = #{status,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where  id = #{id}
+    </update>
+    <insert id="addApply" parameterType="com.zqg.communityManagementBackend.entity.AllApply">
+        insert into all_apply(apply_time,name,phone,depart,apply_association,open_id,status,introduce,image,sex) values(#{applyTime},#{name},#{phone},#{depart},#{applyAssociation},#{openId},#{status},#{introduce},#{image},#{sex})
+    </insert>
+</mapper>

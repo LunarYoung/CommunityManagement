@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zqg.communityManagementBackend.mapper.ActionMapper">
+
+    <insert id="addAction" parameterType="com.zqg.communityManagementBackend.entity.Action">
+        insert into action(name,time,time_length,location,money,des,ass,sum,status) values(#{name},#{time},#{timeLength},#{location},#{money},#{des},#{ass},#{sum},#{status})
+    </insert>
+
+    <insert id="addItem" parameterType="com.zqg.communityManagementBackend.entity.Item">
+        insert into items(name,person) values(#{name},#{person})
+    </insert>
+    <select id="getCol"  resultType="java.lang.String">
+        select name from items
+    </select>
+
+    <select id="queryAction" parameterType="com.zqg.communityManagementBackend.dto.request.ActionReq"  resultType="com.zqg.communityManagementBackend.entity.Action">
+        select
+        *
+        from
+        action
+        <where>
+
+            <if test="ass != '' and ass != null">
+                and ass =#{ass}
+            </if>
+            <if test="status != '' and status != null">
+                and status =#{status}
+            </if>
+
+        </where>
+
+        <choose>
+            <when test="sort == 1">
+                order by id desc
+            </when>
+            <otherwise>
+                order by id asc
+            </otherwise>
+        </choose>
+        limit #{startPage},#{pageSize}
+    </select>
+
+    <update id="updateStatus" parameterType="com.zqg.communityManagementBackend.dto.request.ActionUpdateStatus">
+        update action
+        <set>
+            <if test="status != null">
+                status = #{status,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where  id = #{id}
+    </update>
+
+    <select id="queryPublic" parameterType="com.zqg.communityManagementBackend.dto.request.PublicReq"  resultType="com.zqg.communityManagementBackend.entity.Public">
+        select
+        *
+        from
+        public_apply
+        <where>
+
+            <if test="item != '' and item != null">
+                and item =#{item}
+            </if>
+            <if test="sex != '' and sex != null">
+                and sex =#{sex}
+            </if>
+
+        </where>
+
+        <choose>
+            <when test="sort == 1">
+                order by time desc
+            </when>
+            <otherwise>
+                order by time asc
+            </otherwise>
+        </choose>
+        limit #{startPage},#{pageSize}
+    </select>
+
+    <select id="countPublic" parameterType="com.zqg.communityManagementBackend.dto.request.PublicReq"  resultType="Integer">
+        select
+        Count(*)
+        from
+        public_apply
+        <where>
+
+            <if test="item != '' and item != null">
+                and item =#{item}
+            </if>
+            <if test="sex != '' and sex != null">
+                and sex =#{sex}
+            </if>
+
+        </where>
+
+
+    </select>
+
+    <select id="queryNotice" parameterType="java.lang.String"  resultType="com.zqg.communityManagementBackend.entity.AllApply">
+        select
+        *
+        from
+        all_apply
+        <where>
+            status="录取"
+            <if test="ass != '' and ass != null">
+                and apply_association =#{ass}
+            </if>
+        </where>
+
+
+    </select>
+
+    <insert id="batchNotice">
+        insert into notice(item, des,open_id,name,depart,phone,sign,time) values
+        <foreach collection="list" item="user" separator=",">
+            (#{user.item}, #{user.des}, #{user.open_id}, #{user.name}, #{user.depart}, #{user.phone}, #{user.sign}, #{user.time})
+        </foreach>
+    </insert>
+    <select id="querySign" parameterType="com.zqg.communityManagementBackend.dto.Page" resultType="com.zqg.communityManagementBackend.entity.Notice">
+        select * from notice limit #{startPage},#{pageSize}
+    </select>
+</mapper>

@@ -1,0 +1,16 @@
+
+<view  wx:for="{{list}}" wx:for-item="item">
+<van-panel  wx:if="{{item.sign !=='已签到'}}" title="{{item.item}}" desc="{{item.time}}" status="{{item.sign}}" use-footer-slot>
+  <view style="display:flex">
+  <view class="cont">{{item.des}}</view>
+  <view>
+   
+    <view  wx:if="{{item.sign =='未签到'}}">
+      <van-button data-id="{{item}}" bindtap="sign" class="btn" size="small" type="primary">签到</van-button>
+    </view>
+    <view  wx:else></view>
+    
+  </view>
+  </view>
+</van-panel>
+</view>

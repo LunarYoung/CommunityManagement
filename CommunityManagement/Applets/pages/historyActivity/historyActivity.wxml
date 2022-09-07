@@ -1,0 +1,3 @@
+<view  wx:for="{{list}}" wx:for-item="item">
+<van-cell title="{{item.item}}"  value="{{item.sign}}" label="{{item.des}}" border="true" />
+</view>

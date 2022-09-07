@@ -1,0 +1,21 @@
+/* pages/feedback/feedback.wxss */
+/* pages/applyAssociation/applyAssociation.wxss */
+.photo{
+    color: #646566;
+   font-size: 34rpx;
+   margin-left: 5%;
+   margin-right: 3%;
+}
+
+
+.ass{
+   color: #646566;
+  font-size: 34rpx;
+  margin-left: 19%;
+  margin-right: 3%;
+}
+.btn{
+   margin-left: 42%;
+   float: left;
+   margin-top: 20%;
+}

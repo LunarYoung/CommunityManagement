@@ -1,0 +1,43 @@
+
+<view wx:for="{{MyApply}}" wx:key="item">
+
+<van-cell value="退团"  is-link size="large" bindtap="tip">
+ 
+  <view slot="title" style=" display: flex;">
+    <view class="van-cell-text">{{item.ass}}</view>
+    <view wx:if="{{item.position == '部长'}}">  
+    <van-tag type="danger" style="margin-left:20rpx">{{item.position}}</van-tag>
+  </view>
+
+  <view wx:if="{{item.position == '社员'}}">  
+    <van-tag type="primary" style="margin-left:20rpx">{{item.position}}</van-tag>
+  </view>
+  <view wx:if="{{item.position == '干事'}}">  
+    <van-tag  type="warning" style="margin-left:20rpx">{{item.position}}</van-tag>
+  </view>
+  <view wx:if="{{item.position == '已退团'}}">  
+    <van-tag plain type="default" style="margin-left:20rpx">{{item.position}}</van-tag>
+  </view>
+
+  </view>
+</van-cell>
+
+</view>
+
+<van-notify id="van-notify" />
+<van-dialog
+  use-slot
+  title="选择原因"
+  show="{{ show }}"
+  show-cancel-button
+  confirm-button-open-type="confirm"
+  bind:close="onClose"
+  bind:confirm="confirm"
+
+  id="van-dialog" 
+>
+<van-picker columns="{{ columns }}" bind:change="onChange" />
+</van-dialog >
+
+
+

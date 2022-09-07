@@ -1,0 +1,29 @@
+/* pages/detailedAcitivtyArticle/detailedActivtyArticle.wxss */
+/* pages/detailedDus/detailedDus.wxss */
+.title{
+    display:flex;
+    font-size: 22px;
+    margin-top: 1%;
+    margin-left: 4%;
+    margin-right: 4%;
+    flex-direction:row;
+    align-items:center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+}
+.con{
+    margin-left: 4%;
+    margin-right: 4%;
+}
+.van-cell-text{
+    margin-top: 3%;
+    margin-left: 2%;
+}
+.starNum{
+    margin-top: 15%;
+    margin-left: 9%;
+}
+
+.star{
+    margin-top: 20%;
+    margin-left: 2%;
+}

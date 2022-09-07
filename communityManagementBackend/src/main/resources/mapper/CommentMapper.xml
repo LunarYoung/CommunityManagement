@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zqg.communityManagementBackend.mapper.CommentMapper">
+    <insert id="addComment" parameterType="com.zqg.communityManagementBackend.entity.Comment">
+        insert into comment(dus_id,name,avatar_url,content,star) values(#{dusId},#{name},#{avatarUrl},#{content},#{star})
+    </insert>
+
+
+    <select id="AllComment"  resultType="com.zqg.communityManagementBackend.entity.Comment">
+        select * from comment where dus_id = #{id} order by star desc
+    </select>
+
+</mapper>

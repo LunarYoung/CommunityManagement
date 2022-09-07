@@ -1,0 +1,30 @@
+<van-cell title="{{user.depart}}"  icon="edit" bind:click="showPopup" />
+
+<van-popup  position="bottom" custom-style="height: 60%;" show="{{ show }}" bind:close="onClose">
+    <van-radio-group value="{{ user.depart }}" bind:change="onChange">
+  <van-cell-group>
+    <van-cell title="计算机学院" clickable data-name="计算机学院" bind:click="onClick">
+      <van-radio slot="right-icon" name="计算机学院" />
+    </van-cell>
+    <van-cell title="文学院" clickable data-name="文学院" bind:click="onClick">
+      <van-radio slot="right-icon" name="文学院" />
+    </van-cell>
+    <van-cell title="数学院" clickable data-name="数学院" bind:click="onClick">
+      <van-radio slot="right-icon" name="数学院" />
+    </van-cell>
+    <van-cell title="政法学院" clickable data-name="政法学院" bind:click="onClick">
+      <van-radio slot="right-icon" name="政法学院" />
+    </van-cell>
+    <van-cell title="历史学院" clickable data-name="历史学院" bind:click="onClick">
+      <van-radio slot="right-icon" name="历史学院" />
+    </van-cell>
+    <van-cell title="马克思学院" clickable data-name="马克思学院" bind:click="onClick">
+      <van-radio slot="right-icon" name="马克思学院" />
+    </van-cell>
+    <van-cell title="语言学院" clickable data-name="语言学院" bind:click="onClick">
+      <van-radio slot="right-icon" name="语言学院" />
+    </van-cell>
+   
+  </van-cell-group>
+</van-radio-group>
+</van-popup>

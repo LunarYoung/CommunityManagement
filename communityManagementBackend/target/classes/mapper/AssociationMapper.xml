@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zqg.communityManagementBackend.mapper.AssociationMapper">
+
+
+    <select id="getAssociationList" parameterType="com.zqg.communityManagementBackend.dto.Page" resultType="com.zqg.communityManagementBackend.entity.Association">
+        select * from association limit #{startPage},#{pageSize}
+    </select>
+
+    <delete id="deleteAssociationById" parameterType="int"  >
+        delete from association where id=#{id}
+    </delete>
+
+    <select id="SearchAssociationById" parameterType="String" resultType="com.zqg.communityManagementBackend.entity.Association">
+        SELECT * FROM association WHERE name LIKE '%${value}%'
+    </select>
+
+    <update id="UpdateAssociation" parameterType="com.zqg.communityManagementBackend.entity.Association">
+        update association
+        <set>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="maxSum != null">
+                max_sum = #{maxSum,jdbcType=INTEGER},
+            </if>
+            <if test="status != null">
+                status = #{status,jdbcType=VARCHAR},
+            </if>
+            <if test="leader != null">
+                leader = #{leader,jdbcType=VARCHAR},
+            </if>
+            <if test="introduce != null">
+                introduce = #{introduce,jdbcType=VARCHAR},
+            </if>
+            <if test="timestamp != null">
+                timestamp = #{timestamp,jdbcType=VARCHAR},
+            </if>
+
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <insert id="addAssociation" parameterType="com.zqg.communityManagementBackend.entity.Association">
+        insert into association(create_time,name,max_sum,status,leader,introduce) values(#{createTime},#{name},#{maxSum},#{status}, #{leader},#{introduce})
+    </insert>
+
+</mapper>

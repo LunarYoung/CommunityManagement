@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zqg.communityManagementBackend.mapper.AppDusMapper">
+    <insert id="addAppDus" parameterType="com.zqg.communityManagementBackend.entity.AppDus">
+        insert into app_dus(time,name,avatar_url,title,content,url) values(#{time},#{name},#{avatarUrl},#{title},#{content},#{url})
+    </insert>
+    <select id="queryAppDus" parameterType="Integer"  resultType="com.zqg.communityManagementBackend.entity.AppDusDetail">
+        select
+        *
+        from
+        app_dus
+
+        <choose>
+            <when test="sort == 1">
+                order by view_d desc
+            </when>
+            <when test="sort == 2">
+                order by comment desc
+            </when>
+            <otherwise>
+                order by star desc
+            </otherwise>
+        </choose>
+    </select>
+
+    <select id="appDusViewId"  resultType="com.zqg.communityManagementBackend.entity.AppDusDetail">
+        select * from app_dus  where id = #{id}
+    </select>
+</mapper>

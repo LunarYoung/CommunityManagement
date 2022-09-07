@@ -1,0 +1,32 @@
+<!--index.wxml-->
+
+
+<swiper indicator-dots="true" autoplay="true " interval="2000" current="true" indicator-active-color="#fff" indicator-color="#eee">
+        <swiper-item>
+            <image src="{{img.img1}}"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="{{img.img2}}"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="{{img.img3}}"></image>
+        </swiper-item>
+    </swiper>
+
+
+  
+<view  wx:if="{{isLogin === true}}" class="item" wx:for="{{list}}" wx:for-item="item"  bindtap="getDetail"  data-index="{{item.id}}">
+  <van-cell wx:if="{{item.status ==='已发布'}}" center value="{{item.ass}}"  label="{{item.time}}">
+  <view slot="title">
+    <text class="van-cell-text">{{item.title}}</text>
+    <van-tag wx:if="{{item.type ==='招新'}}" type="success">{{item.type}}</van-tag>
+    <van-tag wx:else type="warning">{{item.type}}</van-tag>
+  </view>
+</van-cell>
+</view>
+
+<button wx:if="{{isLogin !== true}}" class="login-bn" type='primary' size="mini" bindtap='getUserProfile'> 
+    <text>授权登录</text>
+  </button>
+
+  <!-- <van-tag type="warning">推文</van-tag> -->

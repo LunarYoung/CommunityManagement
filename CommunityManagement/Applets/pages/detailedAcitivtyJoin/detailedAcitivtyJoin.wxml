@@ -1,0 +1,15 @@
+<van-cell-group>
+  <view>
+  <text class="title" >题目33333333333333333</text>
+  </view>
+  
+</van-cell-group>
+
+<van-panel title="标题" desc="描述信息" status="状态">
+  <view class="content">
+      <text style="margin-left:8%"> {{content}}</text>
+     
+    </view>
+ 
+</van-panel>
+<van-button class="btn" size="normal" type="danger">申请</van-button>

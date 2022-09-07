@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zqg.communityManagementBackend.mapper.AutoAddMapper">
+    <insert id="AuAddDusView" >
+        update app_dus set view_d = view_d+1 where id=#{id}
+    </insert>
+
+    <insert id="AuAddArticleView" >
+        update article set view = view+1 where id=#{id}
+    </insert>
+
+    <insert id="autoAddDusStar">
+        update app_dus set star = star+1 where id=#{id}
+    </insert>
+
+    <insert id="autoAddArticleStar">
+        update article set star = star+1 where id=#{id}
+    </insert>
+
+</mapper>

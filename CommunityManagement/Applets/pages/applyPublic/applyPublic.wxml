@@ -1,0 +1,27 @@
+
+  <view style="margin-top:4%;" bindtap="showPopup">
+  <text class="photo">事项</text>
+  <text wx:if="{{from.item == null}}" class="ass">请选择</text>
+  <text wx:else class="ass">{{from.item}}</text>
+</view>
+ 
+  <van-picker columns="{{ columns }}" bind:change="onChange" />
+
+  <!-- <van-picker
+  show-toolbar
+  title="标题"
+  columns="{{ columns }}"
+  bind:cancel="onCancel"
+  bind:confirm="onConfirm"
+/> -->
+
+
+ 
+  
+  
+
+  
+
+<view class="btn">
+  <van-button type="primary"  bindtap="clickBtn">提交</van-button>
+</view>

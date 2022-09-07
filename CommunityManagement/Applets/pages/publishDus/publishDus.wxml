@@ -1,0 +1,32 @@
+<van-notice-bar
+  scrollable="{{ false }}"
+  text="在下方提交讨论"
+/>
+<van-cell-group>
+  <van-field
+    value="{{from.title}}"
+    label="标题:"
+    type="textarea"
+    placeholder="请输入"
+    autosize
+    maxlength="20"
+    border="true"
+    bind:change="onChangeTitle"
+  />
+
+  <van-field
+    value="{{ from.content }}"
+    label="内容:"
+    type="textarea"
+    placeholder="请输入"
+    maxlength="100"
+    autosize="{{h}}"
+    show-word-limit="true"
+    border="{{ false }}"
+    bind:change="onChangeContent"
+  />
+  <text class="photo">照片:</text>
+  <van-uploader bind:after-read="afterRead" style="margin-left:15%;" file-list="{{fileList}}" max-count="1"/>
+</van-cell-group>
+
+<van-button class="btn" type="primary" bindtap="clickBtn">提交</van-button>

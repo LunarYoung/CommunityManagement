@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zqg.communityManagementBackend.mapper.CommentManageMapper">
+
+    <select id="commentManage" parameterType="com.zqg.communityManagementBackend.dto.request.CommentManageReq"  resultType="com.zqg.communityManagementBackend.entity.ArticleAndComment">
+        select
+        a.title,a.ass,a.id,a.type,a.time,c.name,c.content,c.status,c.ac_id
+        from
+        article a,article_comment c
+        <where>
+            <if test="title!= '' and title!= null">
+                and a.title like '%${title}%'
+            </if>
+            <if test="ass != '' and ass != null">
+                and a.ass =#{ass}
+            </if>
+            <if test="type != '' and type != null">
+                and a.type =#{type}
+            </if>
+        and a.id = c.article_id
+
+
+        </where>
+
+        limit #{startPage},#{pageSize}
+    </select>
+
+    <select id="commentManageDus" parameterType="com.zqg.communityManagementBackend.dto.Page"  resultType="com.zqg.communityManagementBackend.entity.DusAndComment">
+        select
+        c.c_id,a.name as name1,a.content as content1,a.time,a.url,c.content,c.name,c.status
+        from
+        app_dus a,comment c
+        where a.id = c.dus_id
+
+        limit #{startPage},#{pageSize}
+    </select>
+
+    <update id="upCAMstatus" >
+        update article_comment
+        <set>
+            <if test="status != null">
+                status = "违规",
+            </if>
+        </set>
+        where  ac_id = #{id}
+    </update>
+
+    <update id="upAAMstatus" >
+        update comment
+        <set>
+            <if test="status != null">
+                status = "违规",
+            </if>
+        </set>
+        where  c_id = #{id}
+    </update>
+
+</mapper>

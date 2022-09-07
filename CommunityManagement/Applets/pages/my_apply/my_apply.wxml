@@ -1,0 +1,60 @@
+<van-tabs animated>
+  <van-tab title="进行中">
+
+  <view wx:for="{{MyApply}}" wx:key="item" >
+    <view wx:if="{{item.status == '未面试'}}">
+    <van-cell-group>
+  <van-cell title="{{item.name}}" value="{{item.applyName}}" />
+    </van-cell-group>
+    <van-steps steps="{{ steps }}" active="{{item.status}}" />
+    <van-divider />
+  </view>
+  <view wx:if="{{item.status == '一面过'}}">
+    <van-cell-group>
+  <van-cell title="{{item.name}}" value="{{item.applyName}}" />
+    </van-cell-group>
+    <van-steps steps="{{ steps }}" active="1" />
+    <van-divider />
+  </view>
+
+    <view wx:if="{{item.status == 2}}">
+    <van-cell-group>
+  <van-cell title="{{item.name}}" value="{{item.applyName}}" />
+    </van-cell-group>
+    <van-steps steps="{{ steps }}" active="{{item.status}}" />
+    <van-divider />
+  </view>
+
+</view>
+  </van-tab>
+
+  <van-tab title="通过">
+
+    <view wx:for="{{MyApply}}" wx:key="item" >
+    <view wx:if="{{item.status == '通过'}}">
+
+    <van-cell size="large"  >
+    <view slot="title"  style="display: flex;" >
+    <view class="van-cell-text">{{item.applyAssociation}}</view>
+    <van-tag type="primary" style="margin-left:20%;" size="large" >通过</van-tag>
+  </view>
+</van-cell>
+
+    </view>
+  </view>
+  </van-tab>
+
+  <van-tab title="拒绝">
+    <view wx:for="{{MyApply}}" wx:key="item" >
+    <view wx:if="{{item.status == '淘汰'}}">
+    <van-cell size="large"  >
+  <view slot="title"  style="display: flex;" >
+    <view class="van-cell-text">{{item.applyAssociation}}</view>
+    <van-tag type="danger" style="margin-left:20%;" size="large" >淘汰</van-tag>
+  </view>
+</van-cell>
+</view>
+  </view>
+  </van-tab>
+
+</van-tabs>

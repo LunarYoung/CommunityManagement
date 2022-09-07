@@ -1,0 +1,74 @@
+/* pages/dus/dus.wxss */
+page {
+  background-Color: 	#F5F5F5;
+}
+
+.btn{
+  margin-right: 6%;
+  margin-top: 3%;
+}
+.one_noimage{
+  margin-top: 1%;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  border-radius: 5px;
+  display:flex;
+  background:white ;
+ 
+  
+}
+
+.one{
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  margin-top: 1%;
+  display:flex;
+  background:white ;
+
+  
+}
+
+.left{
+  width: 70%;
+ 
+}
+
+.title{
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+  font-size: 45rpx;
+  color: #8B8989;
+  height: 140rpx;
+  width: 90%;
+}
+
+.left_noimage{
+  width: 100%;
+ 
+}
+
+.title_noimage{
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+  color: #808080;
+  font-size: 45rpx;
+  height: auto;
+  width: 90%;
+}
+
+
+.lik_noimage{
+  margin-top:20rpx;
+  float: left;
+}
+
+.lik{
+
+  float: left;
+}
+
+.right{
+  width: 30%;
+  margin-top: 1%;
+  border-radius: 50px;
+}

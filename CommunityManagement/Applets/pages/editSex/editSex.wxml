@@ -1,0 +1,14 @@
+<van-cell title="{{user.sex}}"  icon="edit" bind:click="showPopup" />
+
+<van-popup  position="bottom" custom-style="height: 22%;" show="{{ show }}" bind:close="onClose">
+    <van-radio-group value="{{user.sex }}" bind:change="onChange">
+  <van-cell-group>
+    <van-cell title="男" clickable data-name="男" bind:click="onClick">
+      <van-radio slot="right-icon" name="男" />
+    </van-cell>
+    <van-cell title="女" clickable data-name="女" bind:click="onClick">
+      <van-radio slot="right-icon" name="女" />
+    </van-cell>
+  </van-cell-group>
+</van-radio-group>
+</van-popup>

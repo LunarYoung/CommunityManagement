@@ -1,0 +1,22 @@
+/**index.wxss**/
+page {
+  background-Color: #F5F5F5;
+}
+.item{
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.van-cell-text{
+  margin-right: 20rpx;
+}
+
+.value-class{
+  color: #4682B4!important;
+  font-size: 35rpx;
+}
+.login-bn{
+  margin-left: 35%;
+  margin-top:30%;
+}

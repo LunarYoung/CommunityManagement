@@ -1,0 +1,54 @@
+<!-- <van-cell
+  value="月里少年"
+  title="微信昵称"
+  link-type="navigateTo"
+  size="large"
+/> -->
+
+<view class="text">
+昵称
+<open-data class="i_text" type="userNickName" lang="zh_CN"></open-data> 
+</view>
+
+<van-cell
+  is-link
+  url="/pages/editSex/editSex"
+
+  title="性别"
+  link-type="navigateTo"
+  size="large"
+/>
+
+<van-cell
+  is-link
+  url="/pages/editGrade/editGrade"
+  title="年级"
+  link-type="navigateTo"
+  size="large"
+/>
+<van-cell
+  is-link
+  url="/pages/editDepart/editDepart"
+  title="学院"
+  link-type="navigateTo"
+  size="large"
+/>
+<van-cell
+  is-link
+  title="地址"
+  url="/pages/editArea/editArea"
+  link-type="navigateTo"
+  size="large"
+/>
+
+<van-cell
+  is-link
+  url="/pages/editPhone/editPhone"
+  title="联系方式"
+  link-type="navigateTo"
+  size="large"
+/>
+
+
+
+

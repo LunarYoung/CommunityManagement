@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zqg.communityManagementBackend.mapper.FeedbackMapper">
+
+
+    <insert id="insertFeedback" parameterType="com.zqg.communityManagementBackend.entity.Feedback">
+        insert into feedback(content,association,time)
+        values(#{content},#{association},#{time})
+    </insert>
+
+    <select id="getFeedbackList" parameterType="com.zqg.communityManagementBackend.dto.Page" resultType="com.zqg.communityManagementBackend.entity.Feedback">
+        select * from feedback limit #{startPage},#{pageSize}
+    </select>
+
+</mapper>

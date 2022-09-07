@@ -1,0 +1,9 @@
+/* pages/my_info/my_info.wxss */
+.i_text{
+    margin-left: 60%;
+}
+
+.text{
+    margin-left: 5%;
+    color:#323233;
+}

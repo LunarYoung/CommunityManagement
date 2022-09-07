@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zqg.communityManagementBackend.mapper.CountAllMapper">
+
+
+    <select id="countFeedback" resultType="java.lang.Integer">
+        select count(id) from feedback
+    </select>
+
+    <select id="countAllApply" resultType="java.lang.Integer">
+        select count(id) from all_apply
+    </select>
+
+    <select id="countAssociation" resultType="java.lang.Integer">
+        select count(id) from association
+    </select>
+
+    <select id="countMember" resultType="java.lang.Integer">
+        select count(id) from member
+    </select>
+
+    <select id="countAction" resultType="java.lang.Integer">
+        select count(id) from action
+    </select>
+
+    <select id="countNotice" resultType="java.lang.Integer">
+        select count(id) from notice
+    </select>
+
+    <select id="countArticle" resultType="java.lang.Integer">
+        select count(id) from article
+    </select>
+    <select id="countCommentManage" parameterType="com.zqg.communityManagementBackend.dto.request.CommentManageReq"  resultType="java.lang.Integer">
+        select
+        count(*)
+        from
+        article a,article_comment c
+        <where>
+            <if test="title!= '' and title!= null">
+                and a.title like '%${title}%'
+            </if>
+            <if test="ass != '' and ass != null">
+                and a.ass =#{ass}
+            </if>
+            <if test="type != '' and type != null">
+                and a.type =#{type}
+            </if>
+            and a.id = c.article_id
+        </where>
+
+    </select>
+
+    <select id="countCommentManageDus" resultType="Integer">
+        select
+           Count(*)
+        from
+            app_dus a,comment c
+        where a.id = c.dus_id
+
+    </select>
+</mapper>

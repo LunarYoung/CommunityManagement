@@ -1,0 +1,36 @@
+/* pages/me/me.wxss */
+
+.i_image{
+  justify-content: center;  
+  align-items:center; 
+  display:flex;
+}
+
+.i_text{
+  margin-top: 2%;
+  justify-content: center;  
+  align-items:center; 
+  display:flex;
+}
+
+.headView {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50rpx;
+  height: 300rpx;
+  width: 750rpx;
+  position: relative
+}
+
+/**
+*open-data 的头像做不了圆角
+*这里是覆盖一个镂空的view在上面 镂空view的边界做成与周围背景颜色一样 做了伪圆角
+**/
+.headView .icon {
+  position: absolute;
+  height: 200rpx;
+  width: 200rpx;
+  border-radius: 50%;
+  border: 50rpx solid white;
+}

@@ -1,0 +1,92 @@
+<van-cell-group>
+  <view>
+  <text class="title" >{{article.title}}</text>
+  </view>
+  <van-cell decode="{{true}}" size="small" value="{{article.ass}} |  {{article.time}}"/>
+</van-cell-group>
+<view class="con">
+<rich-text  nodes="{{article.content}}">
+</rich-text>
+</view>
+<view style="width:100%;margin-top:2%;">
+<view style="float:right;margin-right:2%;color:#808080;display:flex">
+      <van-icon style="margin-top:4px" size="25px"  name="eye-o"/>
+      <view style="margin-top:5px;margin-right:5px">
+      {{article.view}}
+      </view>
+      <van-icon style="margin-top:1px" wx:if="{{starFlag == false }}" size="25px"  name="good-job-o" bindtap="clickAdd" />
+      <van-icon style="margin-top:1px" wx:else="{{starFlag == true }}" size="25px"  name="good-job" bindtap="clickRe"  />
+      <view style="margin-top:5px">
+      {{article.star}}
+    </view>
+    </view>
+  </view>
+
+
+
+  
+  <view style="margin-top:30px"><van-divider contentPosition="left"
+>评论</van-divider></view>
+<van-cell-group>
+  <van-field
+    value="{{sms}}"
+    center
+    clearable
+    label=""
+    bind:change="onChangeTitle"
+    autosize
+    type="textarea"
+    placeholder="评论..."
+    border="{{ false }}"
+    use-button-slot
+  >
+    <van-button slot="button" size="small" type="primary"  bindtap="upbtn">
+      确定
+    </van-button>
+  </van-field>
+</van-cell-group>
+
+<view  wx:for="{{commentList}}" wx:for-item="item">
+<van-cell-group  wx:if="{{item.status =='正常'}}">
+  
+  <van-cell >
+    <view style="display:flex;">
+     <view slot="title" style="width:100%; display:flex;">
+
+    <view style="width:85%; display:flex;" >
+     <van-image
+     round
+     width="2rem"
+     height="2rem"
+     src="{{item.avatarUrl}}"
+    />
+    <view class="van-cell-text">{{item.name}}</view>
+  </view>
+</view>
+
+<view style="width:15%; display: flex;" >
+   <!-- <view wx:if="{{starFlag == false }}"> 
+      <van-icon size="25px" class="star" name="good-job-o" bindtap="clickAdd" />
+   </view>  -->
+
+  <!-- <view wx:else="{{starFlag == true }}">
+    <van-icon size="25px" class="star" name="good-job" bindtap="clickRe"  />
+  </view> -->
+    <!-- <view class="starNum">
+      {{item.star}}
+    </view> -->
+  </view>
+  </view>
+
+
+<view style="width:100%;" >
+  <view style="float:left;margin-left:10%;text-align:left;">
+    {{item.content}}
+  </view>
+</view>
+
+</van-cell>
+
+</van-cell-group>
+
+</view>

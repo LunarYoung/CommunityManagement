@@ -1,0 +1,84 @@
+
+
+<view class="headView">
+    <open-data class="icon" mode="aspectFit" type="userAvatarUrl"></open-data>
+    <view class='icon'></view>
+  </view>
+
+
+<!-- <open-data type="userAvatarUrl"></open-data> -->
+
+<open-data class="i_text" type="userNickName" lang="zh_CN"></open-data> 
+
+<van-divider />
+
+<van-cell
+  is-link
+  icon="/asset/my_info.svg"
+  title="个人信息"
+  link-type="navigateTo"
+  url="/pages/my_info/my_info"
+  size="large"
+/>
+
+<van-cell
+  is-link
+  icon="/asset/association.svg"
+  title="我的社团"
+  link-type="navigateTo"
+  url="/pages/my_com/my_com"
+  size="large"
+/>
+
+<van-cell
+  is-link
+  icon="/asset/apply.svg"
+  title="我的申请"
+  link-type="navigateTo"
+  url="/pages/my_apply/my_apply"
+  size="large"
+/>
+<van-cell
+  is-link
+  icon="/asset/a.svg"
+  title="申请社团"
+  link-type="navigateTo"
+  url="/pages/applyAssociation/applyAssociation"
+  size="large"
+/>
+<van-cell
+  is-link
+  icon="/asset/b.svg"
+  title="公共报名"
+  link-type="navigateTo"
+  url="/pages/applyPublic/applyPublic"
+  size="large"
+/>
+
+
+<van-cell
+  is-link
+  icon="/asset/his.svg"
+  title="历史活动"
+  link-type="navigateTo"
+  url="/pages/historyActivity/historyActivity"
+  size="large"
+/>
+
+<van-cell
+  is-link
+  icon="/asset/c.svg"
+  title="反馈"
+  link-type="navigateTo"
+  url="/pages/feedback/feedback"
+  size="large"
+/>
+<van-cell
+  is-link
+  icon="/asset/Notice.svg"
+  title="声明"
+  link-type="navigateTo"
+  size="large"
+  bindtap="tip">
+  </van-cell>
+  <van-dialog id="van-dialog" />

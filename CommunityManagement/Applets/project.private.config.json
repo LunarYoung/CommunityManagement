@@ -1,0 +1,209 @@
+{
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "pages/index/index",
+                    "pathName": "pages/index/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/me/me",
+                    "pathName": "pages/me/me",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/dus/dus",
+                    "pathName": "pages/dus/dus",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/ing/ing",
+                    "pathName": "pages/ing/ing",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/my_info",
+                    "pathName": "pages/my_info",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/my_com/my_com",
+                    "pathName": "pages/my_com/my_com",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/my_apply/my_apply",
+                    "pathName": "pages/my_apply/my_apply",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/my_info/my_info",
+                    "pathName": "pages/my_info/my_info",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/historyActivity/historyActivity",
+                    "pathName": "pages/historyActivity/historyActivity",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/dus/dus",
+                    "pathName": "pages/dus/dus",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/publishDus/publishDus",
+                    "pathName": "pages/publishDus/publishDus",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/detailedDus/detailed",
+                    "pathName": "pages/detailedDus/detailed",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/detailedDus/detailedDus",
+                    "pathName": "pages/detailedDus/detailedDus",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/detailedAcitivtyJoin/detailedAcitivtyJoin",
+                    "pathName": "pages/detailedAcitivtyJoin/detailedAcitivtyJoin",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/applyAssociation/applyAssociation",
+                    "pathName": "pages/applyAssociation/applyAssociation",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/editSex/editSex",
+                    "pathName": "pages/editSex/editSex",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/editGrade/editGrade",
+                    "pathName": "pages/editGrade/editGrade",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/editArea/editArea",
+                    "pathName": "pages/editArea/editArea",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/editPhone/editPhone",
+                    "pathName": "pages/editPhone/editPhone",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/my_info/my_info",
+                    "pathName": "pages/my_info/my_info",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/applyAssociation/applyAssociation",
+                    "pathName": "pages/applyAssociation/applyAssociation",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/my_com/my_com",
+                    "pathName": "pages/my_com/my_com",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/detailedAcitivtyArticle/detailedActivtyArticle",
+                    "pathName": "pages/detailedAcitivtyArticle/detailedActivtyArticle",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/detailedDus/detailedDus",
+                    "pathName": "pages/detailedDus/detailedDus",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/publishDus/publishDus",
+                    "pathName": "pages/publishDus/publishDus",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/index/index",
+                    "pathName": "pages/index/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/historyActivity/historyActivity",
+                    "pathName": "pages/historyActivity/historyActivity",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/applyAssociation/applyAssociation",
+                    "pathName": "pages/applyAssociation/applyAssociation",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/applyPublic/applyPublic",
+                    "pathName": "pages/applyPublic/applyPublic",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/my_apply/my_apply",
+                    "pathName": "pages/my_apply/my_apply",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/my_com/my_com",
+                    "pathName": "pages/my_com/my_com",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/feedback/feedback",
+                    "pathName": "pages/feedback/feedback",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

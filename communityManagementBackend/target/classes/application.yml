@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    username: root
+    password: dsfv88**sdf32-
+    url: jdbc:mysql://1.12.244.178:3306/communityManagementBackend?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&useSSL=false
+    #url: jdbc:mysql://127.0.0.1:3306/communityManagementBackend?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      max-lifetime: 500000
+
+      maximum-pool-size: 10
+      minimum-idle: 3
+      connection-test-query: SELECT 1
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.zqg.communitymanagementbackend.entity
+  configuration:
+    map-underscore-to-camel-case: true
+
+

@@ -1,0 +1,20 @@
+<van-cell title="{{user.grade}}"  icon="edit" bind:click="showPopup" />
+
+<van-popup  position="bottom" custom-style="height: 32%;" show="{{ show }}" bind:close="onClose">
+    <van-radio-group value="{{user.grade }}" bind:change="onChange">
+  <van-cell-group>
+    <van-cell title="大一" clickable data-name="大一" bind:click="onClick">
+      <van-radio slot="right-icon" name="大一" />
+    </van-cell>
+    <van-cell title="大二" clickable data-name="大二" bind:click="onClick">
+      <van-radio slot="right-icon" name="大二" />
+    </van-cell>
+    <van-cell title="大三" clickable data-name="大三" bind:click="onClick">
+      <van-radio slot="right-icon" name="大三" />
+    </van-cell>
+    <van-cell title="大四" clickable data-name="大四" bind:click="onClick">
+      <van-radio slot="right-icon" name="大四" />
+    </van-cell>
+  </van-cell-group>
+</van-radio-group>
+</van-popup>

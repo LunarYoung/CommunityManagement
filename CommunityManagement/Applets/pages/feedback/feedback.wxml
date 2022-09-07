@@ -1,0 +1,37 @@
+<van-cell-group>
+  <!-- <van-cell title="社团"   bind:click="showPopup" /> -->
+  <view style="margin-bottom:3%;margin-top:4%;" bindtap="showPopup">
+  <text class="photo">社团</text>
+  <text wx:if="{{from.association == null}}" class="ass">请选择</text>
+  <text wx:else class="ass">{{from.association}}</text>
+</view>
+  <van-popup  position="top" custom-style="height: 60%;" show="{{ show }}" bind:close="onClose">
+  <van-picker columns="{{ columns }}" bind:change="onChange" />
+</van-popup>
+  <!-- <van-picker
+  show-toolbar
+  title="标题"
+  columns="{{ columns }}"
+  bind:cancel="onCancel"
+  bind:confirm="onConfirm"
+/> -->
+
+
+  
+  <van-field
+    value="{{from.content}}"
+    label="意见"
+    type="textarea"
+    placeholder="请输入..."
+    maxlength="100"
+    autosize="{{h}}"
+    show-word-limit="true"
+    bind:change="onClickIn"
+  />
+
+   
+
+<view class="btn">
+  <van-button type="primary"  bindtap="clickBtn">提交</van-button>
+</view>
+</van-cell-group>

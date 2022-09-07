@@ -1,0 +1,4 @@
+/* pages/my_apply/my_apply.wxss */
+.van-cell-text{
+    width: 60%;
+}
